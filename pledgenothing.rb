@@ -4,6 +4,6 @@ require 'sinatra'
 require 'haml'
 
 get '/' do
-  "Hello world, it's now #{Time.now}."
+  haml :index
 end
 
