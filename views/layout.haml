@@ -1,0 +1,140 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type"}/
+    %title pledge nothing
+    %link{:href => "stylesheets/common.css", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    / Start Header
+    #header
+      .container
+        %h1
+          %a{:href => "#", :title => "ECOBUSINESS"}
+            Pledge Nothing
+            %span
+        %hr/
+        / top navigation
+        %ul#navigation
+          %li.active
+            %a{:href => "#", :title => "Home"} Home
+          %li
+            %a{:href => "#", :title => "About"} About
+          %li
+            %a{:href => "#", :title => "Services"} Services
+          %li
+            %a{:href => "#", :title => "Portofolio"} Portofolio
+          %li
+            %a{:href => "#", :title => "Contact"} Contact
+        %hr/
+        / banner message and building background
+        #banner
+          This is where your welcome message would appear, or perhaps a company description. Welcome to Eco Business - environmentally friendly solutions for the business world.
+        %hr/
+    / Start Main Content
+    #main.container
+      / left column (products and features)
+      #leftcolumn
+        %h3.leftbox Products
+        %ul.leftbox.borderedlist
+          %li
+            %a{:href => "#", :title => "Garden Tools"} Garden Tools
+          %li
+            %a{:href => "#", :title => "Organic Foods"} Organic Foods
+          %li
+            %a{:href => "#", :title => "Planter Boxes"} Planter Boxes
+          %li
+            %a{:href => "#", :title => "Landscape Services"} Landscape Services
+          %li
+            %a{:href => "#", :title => "Help Hotline"} Help Hotline
+          %li
+            %a{:href => "#", :title => "Weekly Specials"} Weekly Specials
+        %h3.leftbox.header_small Features
+        .leftbox.features
+          %p This week we have our one of a kind sale. Pick your one of a kind plant from our great selection and combine that with a planter box for $5.99.
+          %p Native plant seeds on sale!
+        %hr/
+      / main content area
+      #center
+        .article_wrapper
+          = yield
+          %h2 Weekly News Updates
+          %p Lorem ipsum dolor sit amet, consectetuer adipis cing elit, sed diam nonummy nibh euismod tinci dunt ut laorenim ad minim veniam, quis nostrud exerci tation ullam corper suscipit lobortis nisl ut aliq eet dolore magna aliquam erat volut pat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.
+        .article_wrapper
+          %h2 Current Employment News
+          %p Lorem ipsum dolor sit amet, consectetuer adipis cing elit, sed diam nonummy nibh euismod tinci dunt ut laorenim ad minim veniam, quis nostrud exerci tation ullam corper suscipit lobortis nisl ut aliq eet dolore magna aliquam erat volut pat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipis cing elit.
+        %hr/
+      / product sales boxes
+      #rightcolumn
+        .rightbox_wrapper
+          .rightbox
+            %img.product_image{:alt => "Image:product", :src => "images/product.jpg"}/
+            .product_wrapper
+              %h4 Product Sales
+              %p
+                Lorem ipsum dolor sit amet, consecing elit, sed diam nonummy nibh dunt ut laoreet dolore magna aliqupat. Ut wisi enim ad minim veniam,  exerci tation ullamcorper s...
+                %a{:href => "#", :title => "Read More"} more
+        .rightbox_wrapper
+          .rightbox
+            %img.product_image{:alt => "Image:product", :src => "images/product.jpg"}/
+            .product_wrapper
+              %h4 Product Sales
+              %p
+                Lorem ipsum dolor sit amet, consecing elit, sed diam nonummy nibh dunt ut laoreet dolore magna aliqupat. Ut wisi enim ad minim veniam,  exerci tation ullamcorper s...
+                %a{:href => "#", :title => "Read More"} more
+        .rightbox_wrapper.lastbox
+          .rightbox
+            %img.product_image{:alt => "Image:product", :src => "images/product.jpg"}/
+            .product_wrapper
+              %h4 Product Sales
+              %p
+                Lorem ipsum dolor sit amet, consecing elit, sed diam nonummy nibh dunt ut laoreet dolore magna aliqupat. Ut wisi enim ad minim veniam,  exerci tation ullamcorper s...
+                %a{:href => "#", :title => "Read More"} more
+        %hr/
+    / Start Bottom Information
+    #bottominfo
+      .container
+        / bottom left information
+        .bottomcolumn
+          %h3 Links to Help You Succeed
+          %p Follow these links to learn more great business tips
+          %ul.borderedlist.iconlist
+            %li
+              %a{:href => "#", :title => "Keep your clients in the know"} Keep your clients in the know
+            %li
+              %a{:href => "#", :title => "Current specials and discounts"} Current specials and discounts
+            %li
+              %a{:href => "#", :title => "Links to your services and promos"} Links to your services and promos
+        / bottom center information
+        .bottomcolumn
+          %h3 Recent Client Lists
+          %p Here is a list of some of our satisfied customers.
+          %ul.borderedlist.iconlist
+            %li
+              %a{:href => "#", :title => "Keep your clients in the know"} Keep your clients in the know
+            %li
+              %a{:href => "#", :title => "Current specials and discounts"} Current specials and discounts
+            %li
+              %a{:href => "#", :title => "Links to your services and promos"} Links to your services and promos
+        / bottom right information
+        .bottomcolumn.bottomright
+          %h3 Stay Informed
+          %p Subscribe to our e-news. Every month you recieve all the latest info, straight to your inbox.
+          %form{:action => "#"}
+            %input.enewsbox{:name => "email", :type => "text"}/
+            %input.button{:type => "button", :value => "Submit"}/
+        %hr/
+    / Start Footer
+    #footer
+      .container
+        %a#designby{:href => "http://www.studio7designs.com/", :title => "Design by STUDIO7DESIGNS"} WEB DESIGN BY STUDIO7DESIGNS
+        %ul#footer_navigation
+          %li
+            %a{:href => "#", :title => "Home"} Home
+          %li
+            %a{:href => "#", :title => "About"} About
+          %li
+            %a{:href => "#", :title => "Services"} Services
+          %li
+            %a{:href => "#", :title => "Portofolio"} Portofolio
+          %li
+            %a{:href => "#", :title => "Contact"} Contact
