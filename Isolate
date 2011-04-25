@@ -1,0 +1,2 @@
+gem "sinatra", "1.2.3"
+gem "haml", "3.1.0"
