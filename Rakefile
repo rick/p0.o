@@ -6,6 +6,7 @@ require 'sinatra/activerecord/rake'
 
 namespace :deploy do
   task :notify_passenger_of_restart do
+    puts "Notifying Passenger..."
     system("touch tmp/restart.txt")
   end
 
