@@ -1,4 +1,4 @@
 require 'pledgenothing'
 
-run Sinatra::Application
+run PledgeNothing
 
