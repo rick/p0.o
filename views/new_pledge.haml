@@ -14,6 +14,12 @@
     - field_set_tag do
       .pledge_statement
         %p
+          %span.pledge_entry
+            = check_box_tag :is_anonymous, :value => @pledge.is_anonymous
+          %span.pledge_text
+            I want to pledge anonymously.  Don't share my name or email address.
+          
+        %p
           %span.pledge_text
             I,
           %span.pledge_entry
@@ -29,6 +35,7 @@
             = text_field_tag :pledge_years, :value => @pledge.pledge_years, :size => 2
           %span.pledge_text
             year(s), as a protest against plans to sell the radio license of WRVU.
+            
         %p
           %span.pledge_text
             I am (optionally) providing my email address for you to keep me notified of developments:
