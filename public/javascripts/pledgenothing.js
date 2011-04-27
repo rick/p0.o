@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
     var comments     = $("textarea[name='comments']").val();
     var email        = $(".new-pledge-form input[name='email']").val();
     
-    $(".new-pledge-form").load("/create", { 
+    $("#facebox .popup .content").load("/create", { 
       "name"         : name, 
       "pledge_years" : pledge_years, 
       "class_year"   : class_year,
