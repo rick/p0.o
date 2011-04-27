@@ -15,7 +15,7 @@
       .pledge_statement
         %p
           %span.pledge_entry
-            = check_box_tag :is_anonymous, :value => @pledge.is_anonymous
+            = check_box_tag :is_anonymous, :value => @pledge.is_anonymous, :id => 'pledge_anonymously'
           %span.pledge_text
             I want to pledge anonymously.  Don't share my name or email address.
           
