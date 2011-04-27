@@ -1,49 +1,52 @@
-- form_tag '/create', :class => 'new-pledge-form', :method => 'post' do
-  - unless @pledge.errors.empty?
-    %h3 Please correct the following problems:
-    
-    %div.notice
-      = @pledge.errors.full_messages
+.pledge-sheet
+  .header
+    Pledge Nothing to Save WRVU!
 
-  - field_set_tag do
-    .pledge_statement
-      %p
-        %span.pledge_text
-          I,
-        
-        %span.pledge_entry
-          = text_field_tag :name, :value => @pledge.name
-        
-        %span.pledge_text
-          a graduate of Vanderbilt University's Class of 
-        
-        %span.pledge_entry
-          = select_tag :class_year, :options => [''] + (1920..2015).to_a, :selected => (@pledge.class_year || '')
-        
-        %span.pledge_text
-          do hereby pledge to donate $0.00 to Vanderbilt University for the next 
-        
-        %span.pledge_entry
-          = text_field_tag :pledge_years, :value => @pledge.pledge_years
-        
-        %span.pledge_text
-          years, as a protest against plans to sell the radio license of WRVU.
-        
-      %p
-        %span.pledge_text
-          In addition, I would like to make the following comments: 
-      
-      %p
-        %span.pledge_entry
-          = text_area_tag :comments, :value => @pledge.comments, :class => 'pledge-comments'
+  - form_tag '/create', :class => 'new-pledge-form', :method => 'post' do
+    - unless @pledge.errors.empty?
+      .errors
+        .notice-message 
+          Help us out -- we couldn't record your pledge because of some issues:
+        .notice
+          %ul
+            - @pledge.errors.full_messages.each do |message|
+              %li= message
+    - field_set_tag do
+      .pledge_statement
+        %p
+          %span.pledge_entry
+            = check_box_tag :is_anonymous, :value => @pledge.is_anonymous, :id => 'pledge_anonymously'
+          %span.pledge_text
+            I want to pledge anonymously.  Don't share my name or email address.
+          
+        %p
+          %span.pledge_text
+            I,
+          %span.pledge_entry
+            = text_field_tag :name, :value => @pledge.name
+            ,
+          %span.pledge_text
+            a graduate of Vanderbilt University's Class of 
+          %span.pledge_entry
+            = select_tag :class_year, :options => [''] + (1920..2015).to_a, :selected => (@pledge.class_year || '')
+          %span.pledge_text
+            do hereby pledge to donate exactly $0.00 to Vanderbilt University for the next 
+          %span.pledge_entry
+            = text_field_tag :pledge_years, :value => @pledge.pledge_years, :size => 2
+          %span.pledge_text
+            year(s), as a protest against plans to sell the radio license of WRVU.
+            
+        %p
+          %span.pledge_text
+            I am (optionally) providing my email address for you to keep me notified of developments:
+          %span.pledge_entry
+            = text_field_tag :email, :value => @pledge.email
 
+        %p
+          %span.pledge_text
+            I would like to add the following comments: 
+          %span.pledge_entry
+            = text_area_tag :comments, :value => @pledge.comments, :class => 'pledge-comments'
 
-      %p
-        %span.pledge_text
-          I am (optionally) providing my email for you to keep me notified of news and developments about the Pledge Nothing campaign:
-
-        %span.pledge_entry
-          = text_field_tag :email, :value => @pledge.email
-
-  - field_set_tag(:class => 'buttons') do
-    = submit_tag "Pledge", :class => 'pledge-submit-button'
+    - field_set_tag(:class => 'pledge-buttons') do
+      = submit_tag "Pledge", :class => 'pledge-submit-button'

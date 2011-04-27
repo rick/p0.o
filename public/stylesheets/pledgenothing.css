@@ -1,0 +1,66 @@
+.errors {
+  margin: 1ex;
+  margin-bottom: 1ex;
+  padding: 1em;
+  border-bottom: 1px dotted #ddd;
+}
+
+.notice-message {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.notice {
+  text-align: center;
+  margin-top: 1ex;
+  font-weight: bold;
+  color: red;
+}
+
+.header {
+  margin-left: 1ex;
+  font-weight: bold;
+  font-size: 150%;
+  border-bottom: 1px solid black;
+}
+
+.pledge-sheet {
+  line-spacing: 100%;
+  background-color: #f1eee7;
+}
+
+.pledge-sheet p {
+  margin-top: 1em;  
+  padding-bottom: 1em;
+  border-bottom: 1px dotted #ddd;
+}
+
+.pledge_statement {
+  margin: 1ex;
+  padding: 1ex;
+  margin-bottom: 2ex;
+}
+
+.pledge-comments {
+  width: 320px;
+  height: 80px;
+}
+
+.pledge-buttons {
+  text-align: right;
+}
+
+.pledge-thanks {
+  line-spacing: 100%;
+  background-color: #f1eee7;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.pledge-thanks p {
+  text-align: center;
+  margin-top: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-bottom: 1em;
+}
