@@ -13,13 +13,29 @@ class Pledge < ActiveRecord::Base
   validates_inclusion_of :pledge_years, :in => 1..20, :message => 'must be between 1 and 20'
   validates_numericality_of :class_year, :allow_nil => true
   validates_inclusion_of :class_year, :in => 1920..2015, :message => 'must be between 1920 and 2015'
+
+  class << self
+    def most_recent(max = 1)
+      order('created_at desc').limit(max)
+    end
+    
+    def random
+      find(rand(count)+1)
+    end
+  end
 end
 
 class PledgeNothing < Sinatra::Base
   register Padrino::Helpers
 
   get '/' do
+    @pledges = Pledge.most_recent
     haml :index
+  end
+  
+  get '/randompledge' do
+    @pledge = Pledge.random
+    haml :random_pledge, :layout => false
   end
 
   get '/new' do
