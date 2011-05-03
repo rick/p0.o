@@ -1,1 +1,18 @@
-= h @pledge.inspect
+.single_pledge
+  - if @pledge.is_anonymous?
+    %span.anonymous
+      Anonymous
+    %span.show_pledge
+      from the Class of
+      = @pledge.class_year
+      pledged to donate $0.00 for the next
+      = @pledge.pledge_years
+      years.
+  - else
+    %span.show_pledge
+      = @pledge.name
+      from the Class of
+      = @pledge.class_year
+      pledged to donate $0.00 for the next
+      = @pledge.pledge_years
+      years.

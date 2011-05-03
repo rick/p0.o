@@ -2,8 +2,8 @@
   %h2 Weekly News Updates
   %p Some bullshit implied.
 .article_wrapper
-  %h2 Pledge History
+  %h2 Featured Pledges
   #pledge_scroller
-    - @pledges.each do |pledge|
+    - @pledges.each do |@pledge|
       .pledge_item 
-        = h pledge.inspect
+        = haml :random_pledge, :layout => false
