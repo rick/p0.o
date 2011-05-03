@@ -2,7 +2,7 @@ $.facebox.settings.closeImage = '/images/closelabel.png';
 $.facebox.settings.loadingImage = '/images/loading.gif';
 
 jQuery(document).ready(function($) {
-  // any link with a rel="facebox" are now live facebox links
+  // any links with a rel="facebox" are now live facebox links
   $('a[rel*=facebox]').facebox();
   
   // when the anonymous checkbox on the pledge form is updated:
