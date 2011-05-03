@@ -64,3 +64,26 @@
   margin-right: 2em;
   padding-bottom: 1em;
 }
+
+.single_pledge {
+  font-size: 150%;
+  margin: 1em;
+  padding: 1em;
+}
+
+.color-1 {
+  background-color: #fee;
+}
+
+.color-2 {
+  background-color: #eef;
+}
+
+.color-3 {
+  background-color: #efe;
+}
+
+.highlighted {
+  color: red;
+  font-weight: bold;
+}
