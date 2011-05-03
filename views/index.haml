@@ -1,5 +1,9 @@
-%h2 Test
-%p
-  This is a test
-%p
-  This is only a test
+.article_wrapper
+  %h2 Weekly News Updates
+  %p Some bullshit implied.
+.article_wrapper
+  %h2 Featured Pledges
+  #pledge_scroller
+    - @pledges.each do |@pledge|
+      .pledge_item 
+        = haml :random_pledge, :layout => false
