@@ -39,6 +39,7 @@ jQuery(document).ready(function($) {
       "email"        : email,
       "is_anonymous" : is_anonymous
     });
+    return false;
   });
 });
 
