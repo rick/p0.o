@@ -54,8 +54,23 @@
          
         %h3.leftbox.header_small Share
         .leftbox.features
-          %p Follow us on twitter.
-          %p Let your friends know about us!
+          %p 
+            %a{:href => 'http://www.twitter.com/pledgenothing'} 
+              Follow us on twitter.
+          %p 
+            Let your friends know about us!
+            / AddThis Button BEGIN
+            .addthis_toolbox.addthis_default_style
+              %a.addthis_button_preferred_1
+              %a.addthis_button_preferred_2
+              %a.addthis_button_preferred_3
+              %a.addthis_button_preferred_4
+              %a.addthis_button_compact
+              / %a.addthis_counter.addthis_bubble_style
+            :javascript
+              var addthis_config = {"data_track_clickback":true};
+            %script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc0e50f12f08ce3", :type => "text/javascript"}
+            / AddThis Button END
         %hr/
       / main content area
       #center
@@ -101,10 +116,20 @@
         / bottom right information
         .bottomcolumn.bottomright
           %h3 Share the Wealth!
-          %p Follow us on twitter and let your friends know about Pledge Nothing!
-          %form{:action => "#"}
-            %input.enewsbox{:name => "email", :type => "text"}/
-            %input.button{:type => "button", :value => "Submit"}/
+          %p 
+            %a{:href => 'http://www.twitter.com/pledgenothing'} Follow us on twitter 
+            and let your friends know about Pledge Nothing!
+            / AddThis Button BEGIN
+            .addthis_toolbox.addthis_default_style
+              %a.addthis_button_preferred_1
+              %a.addthis_button_preferred_2
+              %a.addthis_button_preferred_3
+              %a.addthis_button_preferred_4
+              %a.addthis_button_compact
+            :javascript
+              var addthis_config = {"data_track_clickback":true};
+            %script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc0e50f12f08ce3", :type => "text/javascript"}
+            / AddThis Button END
         %hr/
     / Start Footer
     #footer
