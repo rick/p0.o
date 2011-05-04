@@ -14,7 +14,7 @@
     #header
       .container
         %h1
-          %a{:href => "#", :title => "ECOBUSINESS"}
+          %a{:href => "#", :title => "Pledge Nothing"}
             Pledge Nothing
             %span
         %hr/
@@ -25,94 +25,83 @@
           %li
             %a{:href => "/new", :rel => 'facebox',:title => "Pledge Nothing"} Pledge Nothing
           %li
+            %a{:href => '/contact', :title => 'Contact Us'} Contact Us
         %hr/
         / banner message and building background
         #banner
-          This is where your welcome message would appear, or perhaps a company description. Welcome to Eco Business - environmentally friendly solutions for the business world.
+          Vanderbilt's student radio station WRVU will be off the air soon if its broadcast license is sold.
+          We intend to convince Vanderbilt to keep the station alive by withholding something they might actually care about:  our money.
+          
         %hr/
     / Start Main Content
     #main.container
-      / left column (products and features)
+      / left column 
       #leftcolumn
-        %h3.leftbox Products
+        %h3.leftbox Links
         %ul.leftbox.borderedlist
           %li
-            %a{:href => "#", :title => "Garden Tools"} Garden Tools
+            %a{:href => "/new", :rel => 'facebox',:title => "Pledge Nothing"} Pledge Nothing
           %li
-            %a{:href => "#", :title => "Organic Foods"} Organic Foods
+            %a{:href => "http://savewrvu.org", :title => "SaveWRVU.org"} SaveWRVU.org
           %li
-            %a{:href => "#", :title => "Planter Boxes"} Planter Boxes
+            %a{:href => "http://savewrvuradio.wordpress.com/how-can-i-help/", :title => "Tips from SaveWRVU"} "How Can I Help?" 
           %li
-            %a{:href => "#", :title => "Landscape Services"} Landscape Services
+            %a{:href => "http://www.facebook.com/pages/Save-WRVU/155963281089773/", :title => "SaveWRVU on Facebook"} SaveWRVU on Facebook
           %li
-            %a{:href => "#", :title => "Help Hotline"} Help Hotline
+            %a{:href => "http://groups.google.com/group/save-wrvu", :title => "Save WRVU Google Group"} SaveWRVU Google Group
           %li
-            %a{:href => "#", :title => "Weekly Specials"} Weekly Specials
-        %h3.leftbox.header_small Features
+            %a{:href => "http://www.wrvu.org", :title => "WRVU Radio"} WRVU Radio
+         
+        %h3.leftbox.header_small Share
         .leftbox.features
-          %p This week we have our one of a kind sale. Pick your one of a kind plant from our great selection and combine that with a planter box for $5.99.
-          %p Native plant seeds on sale!
+          %p Follow us on twitter.
+          %p Let your friends know about us!
         %hr/
       / main content area
       #center
         = yield
         %hr/
-      / product sales boxes
+      / right side boxes
       #rightcolumn
-        .rightbox_wrapper
-          .rightbox
-            %img.product_image{:alt => "Image:product", :src => "images/product.jpg"}/
-            .product_wrapper
-              %h4 Product Sales
-              %p
-                Lorem ipsum dolor sit amet, consecing elit, sed diam nonummy nibh dunt ut laoreet dolore magna aliqupat. Ut wisi enim ad minim veniam,  exerci tation ullamcorper s...
-                %a{:href => "#", :title => "Read More"} more
-        .rightbox_wrapper
-          .rightbox
-            %img.product_image{:alt => "Image:product", :src => "images/product.jpg"}/
-            .product_wrapper
-              %h4 Product Sales
-              %p
-                Lorem ipsum dolor sit amet, consecing elit, sed diam nonummy nibh dunt ut laoreet dolore magna aliqupat. Ut wisi enim ad minim veniam,  exerci tation ullamcorper s...
-                %a{:href => "#", :title => "Read More"} more
         .rightbox_wrapper.lastbox
           .rightbox
-            %img.product_image{:alt => "Image:product", :src => "images/product.jpg"}/
             .product_wrapper
-              %h4 Product Sales
-              %p
-                Lorem ipsum dolor sit amet, consecing elit, sed diam nonummy nibh dunt ut laoreet dolore magna aliqupat. Ut wisi enim ad minim veniam,  exerci tation ullamcorper s...
-                %a{:href => "#", :title => "Read More"} more
+              %h4 Featured Pledges
+              #pledge_scroller
+                - @pledges.each do |@pledge|
+                  .pledge_item 
+                    = haml :random_pledge, :layout => false
         %hr/
     / Start Bottom Information
     #bottominfo
       .container
         / bottom left information
         .bottomcolumn
-          %h3 Links to Help You Succeed
-          %p Follow these links to learn more great business tips
+          %h3 Guidelines to Donating Nothing
+          %p Here are some tips for making your pledge of zilch most effective
           %ul.borderedlist.iconlist
             %li
-              %a{:href => "#", :title => "Keep your clients in the know"} Keep your clients in the know
+              %a{:href => '#'} Be courteous and professional.
             %li
-              %a{:href => "#", :title => "Current specials and discounts"} Current specials and discounts
+              %a{:href => '#'} "I am not donating for # years."
             %li
-              %a{:href => "#", :title => "Links to your services and promos"} Links to your services and promos
+              %a{:href => '#'} "... unless WRVU keeps its license."
+              
         / bottom center information
         .bottomcolumn
-          %h3 Recent Client Lists
-          %p Here is a list of some of our satisfied customers.
+          %h3 Can I learn more?
+          %p Here are some other places to keep up-to-date.
           %ul.borderedlist.iconlist
             %li
-              %a{:href => "#", :title => "Keep your clients in the know"} Keep your clients in the know
+              %a{:href => "http://savewrvuradio.wordpress.com/how-can-i-help/", :title => "Tips from SaveWRVU"} "How Can I Help"? from SaveWRVU
             %li
-              %a{:href => "#", :title => "Current specials and discounts"} Current specials and discounts
+              %a{:href => "http://www.facebook.com/pages/Save-WRVU/155963281089773/", :title => "SaveWRVU on Facebook"} SaveWRVU on Facebook
             %li
-              %a{:href => "#", :title => "Links to your services and promos"} Links to your services and promos
+              %a{:href => "http://groups.google.com/group/save-wrvu", :title => "Save WRVU Google Group"} SaveWRVU Google Group
         / bottom right information
         .bottomcolumn.bottomright
-          %h3 Stay Informed
-          %p Subscribe to our e-news. Every month you recieve all the latest info, straight to your inbox.
+          %h3 Share the Wealth!
+          %p Follow us on twitter and let your friends know about Pledge Nothing!
           %form{:action => "#"}
             %input.enewsbox{:name => "email", :type => "text"}/
             %input.button{:type => "button", :value => "Submit"}/
@@ -126,3 +115,6 @@
             %a{:href => "/", :title => "Home"} Home
           %li
             %a{:href => "/new", :title => "Pledge Nothing"} Pledge Nothing
+          %li
+            %a{:href => '/contact', :title => 'Contact Us'} Contact Us
+            

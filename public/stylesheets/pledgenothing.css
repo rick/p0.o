@@ -24,6 +24,9 @@
   border-bottom: 1px solid black;
 }
 
+#pledge_scroller {
+}
+
 .pledge-sheet {
   line-spacing: 100%;
   background-color: #f1eee7;
@@ -86,4 +89,12 @@
 .highlighted {
   color: red;
   font-weight: bold;
+}
+
+.click_here {
+  margin: 1em;
+  padding: 1em;
+  font-weight: bold;
+  background-color: #f1eee7;
+  text-align: center;
 }
