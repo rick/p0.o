@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
 
 // make pledge history visible
 var newitem = function() {  
-  $('#pledge_scroller').hide().load('/randompledge', function() { $('#pledge_scroller').slideDown(); });
+  $('#pledge_scroller').hide().load('/randompledge', function() { $('#pledge_scroller').fadeIn(); });
 }
 
 setInterval(newitem, 10000);

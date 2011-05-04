@@ -1,18 +1,13 @@
-.single_pledge
-  - if @pledge.is_anonymous?
-    %span.anonymous
+.single_pledge{:class => "color-#{rand(3)+1}"}
+  %span.highlighted
+    - if @pledge.is_anonymous?
       Anonymous
-    %span.show_pledge
-      from the Class of
-      = @pledge.class_year
-      pledged to donate $0.00 for the next
-      = @pledge.pledge_years
-      years.
-  - else
-    %span.show_pledge
+    - else
       = @pledge.name
-      from the Class of
-      = @pledge.class_year
-      pledged to donate $0.00 for the next
-      = @pledge.pledge_years
-      years.
+  from the Class of
+  %span.highlighted
+    = @pledge.class_year
+  pledged to donate $0.00 for the next
+  %span.highlighted
+    = @pledge.pledge_years
+    years.

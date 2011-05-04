@@ -24,6 +24,9 @@
   border-bottom: 1px solid black;
 }
 
+#pledge_scroller {
+}
+
 .pledge-sheet {
   line-spacing: 100%;
   background-color: #f1eee7;
@@ -63,4 +66,35 @@
   margin-left: 2em;
   margin-right: 2em;
   padding-bottom: 1em;
+}
+
+.single_pledge {
+  font-size: 150%;
+  margin: 1em;
+  padding: 1em;
+}
+
+.color-1 {
+  background-color: #fee;
+}
+
+.color-2 {
+  background-color: #eef;
+}
+
+.color-3 {
+  background-color: #efe;
+}
+
+.highlighted {
+  color: red;
+  font-weight: bold;
+}
+
+.click_here {
+  margin: 1em;
+  padding: 1em;
+  font-weight: bold;
+  background-color: #f1eee7;
+  text-align: center;
 }
