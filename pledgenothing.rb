@@ -4,7 +4,11 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/base'
 require 'padrino-helpers'
+require 'padrino-mailer'
 require 'haml'
+
+@smtp_settings = YAML.load(File.read(File.join(File.dirname(__FILE__), 'config', 'email.yml')))
+set :delivery_method, :smtp => @smtp_settings
 
 class Pledge < ActiveRecord::Base
   validates_presence_of :name, :unless => :is_anonymous?
@@ -27,6 +31,21 @@ end
 
 class PledgeNothing < Sinatra::Base
   register Padrino::Helpers
+  register Padrino::Mailer
+
+  mailer :test do
+    email :testmail do |name|
+      subject 'Test'
+      to      'rick@rickbradley.com'
+      from    'info@pledgenothing.org'
+      locals  :name => name
+      render  'test/testmail'
+    end
+  end
+  
+  get '/testmail' do
+    deliver(:test, :testmail, "Bob Vila")
+  end
 
   get '/' do
     @pledges = Pledge.most_recent
