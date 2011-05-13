@@ -12,3 +12,5 @@
         = '"' + pledge.comments + '"'
       - else
         years.
+Last id:
+= @unsent_pledges.collect(&:id).max
