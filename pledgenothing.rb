@@ -23,6 +23,10 @@ class Pledge < ActiveRecord::Base
     def random
       find(rand(count)+1)
     end
+    
+    def unsent
+      where('sent is null or sent == ?', [false]).sort_by {|p| p.is_anonymous? ? 0 : 1 }
+    end
   end
 end
 
@@ -59,6 +63,11 @@ class PledgeNothing < Sinatra::Base
   get '/new' do
     @pledge = Pledge.new(:name => 'Your Name', :pledge_years => '5')
     haml :new_pledge, :layout => false
+  end
+
+  get '/unsent' do
+    @unsent_pledges = Pledge.unsent
+    haml :unsent, :layout => false
   end
 
   post '/create' do
