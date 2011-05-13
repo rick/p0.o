@@ -7,8 +7,11 @@ require 'padrino-helpers'
 require 'padrino-mailer'
 require 'haml'
 
-@smtp_settings = YAML.load(File.read(File.join(File.dirname(__FILE__), 'config', 'email.yml')))
-set :delivery_method, :smtp => @smtp_settings
+email_config_file = File.join(File.dirname(__FILE__), 'config', 'email.yml')
+if File.exists? email_config_file
+  @smtp_settings = YAML.load(File.read(email_config_file))
+  set :delivery_method, :smtp => @smtp_settings
+end
 
 class Pledge < ActiveRecord::Base
   validates_presence_of :name, :unless => :is_anonymous?
