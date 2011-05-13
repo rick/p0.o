@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/base'
 require 'padrino-helpers'
+require 'padrino-mailer'
 require 'haml'
 
 class Pledge < ActiveRecord::Base
@@ -27,6 +28,34 @@ end
 
 class PledgeNothing < Sinatra::Base
   register Padrino::Helpers
+  register Padrino::Mailer
+
+  def self.build_mailer
+    mailer :test do
+      email :testmail do |name|
+        subject 'Test'
+        to      'rick@rickbradley.com'
+        from    'info@pledgenothing.org'
+        locals  :name => name
+        render  'test/testmail'
+      end
+    end
+  end
+
+  def setup_email
+    return if @email_config_file
+    @email_config_file = File.join(File.dirname(__FILE__), 'config', 'email.yml')
+    if File.exists? @email_config_file
+      @smtp_settings = YAML.load(File.read(@email_config_file))
+      set :delivery_method, :smtp => @smtp_settings
+    end
+    self.class.build_mailer
+  end
+  
+  get '/testmail' do
+    setup_email
+    deliver(:test, :testmail, "Bob Vila")
+  end
 
   get '/' do
     @pledges = Pledge.most_recent

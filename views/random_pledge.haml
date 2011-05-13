@@ -11,3 +11,7 @@
   %span.highlighted
     = @pledge.pledge_years
     years.
+  - if @pledge.comments and @pledge.comments != ''
+    .comment_wrapper
+      = h '"' + @pledge.comments + '"'
+      

@@ -78,6 +78,18 @@
         %hr/
       / right side boxes
       #rightcolumn
+        .rightbox_wrapper
+          .rightbox
+            .product_wrapper
+              %h4 
+                Press
+              %ul
+                %li
+                  %h4
+                    %a{:href => 'http://www.nashvillescene.com/nashvillecream/archives/2011/05/12/in-fight-to-save-wrvu-organization-encourages-vanderbilt-donars-to-boycott-giving'}
+                      Nashville Scene, May 13
+                  %p
+                    "In Fight to Save WRVU, Organization Encourages Vanderbilt Donors to Boycott Giving"
         .rightbox_wrapper.lastbox
           .rightbox
             .product_wrapper
@@ -85,7 +97,7 @@
               #pledge_scroller
                 - @pledges.each do |@pledge|
                   .pledge_item 
-                    = haml :random_pledge, :layout => false
+                    = haml :random_pledge, :layout => false                      
         %hr/
     / Start Bottom Information
     #bottominfo
