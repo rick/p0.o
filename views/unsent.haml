@@ -1,0 +1,14 @@
+%ul
+  - @unsent_pledges.each do |pledge|
+    %li
+      = pledge.name
+      of the class of 
+      = pledge.class_year
+      pledged $0.00 for the next
+      = pledge.pledge_years
+      - if pledge.comments and pledge.comments != ''
+        years,
+        and added the comment:
+        = '"' + pledge.comments + '"'
+      - else
+        years.
