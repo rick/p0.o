@@ -105,3 +105,20 @@
   font-size: 90%;
   font-style: italic;  
 }
+
+.letter {
+  height: 450px;
+  overflow: auto;
+  line-height: 150%;
+  padding: 1em;
+  background-color: #f1eee7;
+}
+
+.letter li {
+  padding-bottom: 1em;
+  padding-left: 3em;
+}
+
+.letter p {
+  padding-bottom: 1.5em;
+}

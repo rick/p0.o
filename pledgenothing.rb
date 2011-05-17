@@ -25,7 +25,7 @@ class Pledge < ActiveRecord::Base
     end
     
     def unsent
-      where('sent is null or sent == ?', [false]).sort_by {|p| p.is_anonymous? ? 0 : 1 }
+      where('sent is null or sent == ?', [false])
     end
   end
 end
